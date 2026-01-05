@@ -1,40 +1,22 @@
 [build]
-  # Build command for the React app
+  # Build command - this will install client deps and build React app
   command = "npm run build"
   # Directory to publish (React build output)
   publish = "client/build"
-  # Install dependencies for both root and client
-  ignore = "git diff --quiet $CACHED_COMMIT_REF $COMMIT_REF"
 
 [build.environment]
   # Node version
   NODE_VERSION = "18"
-  # Skip client install since we'll do it in build command
-  SKIP_PREFLIGHT_CHECK = "true"
 
-# Redirect all routes to index.html for React Router
+# Redirect all routes to index.html for React Router (SPA)
 [[redirects]]
   from = "/*"
   to = "/index.html"
   status = 200
 
-# API routes - redirect to your backend (you'll need to update this URL after deploying backend)
-[[redirects]]
-  from = "/api/*"
-  to = "https://your-backend-url.herokuapp.com/api/:splat"
-  status = 200
-  force = true
-
-# Contact form submission - redirect to backend
-[[redirects]]
-  from = "/contact"
-  to = "https://your-backend-url.herokuapp.com/contact"
-  status = 200
-  force = true
-  
-# Resume download - redirect to backend
-[[redirects]]
-  from = "/download/resume"
-  to = "https://your-backend-url.herokuapp.com/download/resume"
-  status = 200
-  force = true
+# If you deploy backend separately, uncomment and update these:
+# [[redirects]]
+#   from = "/api/*"
+#   to = "https://your-backend-url.herokuapp.com/api/:splat"
+#   status = 200
+#   force = true
