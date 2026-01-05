@@ -7,9 +7,10 @@
     "dev": "concurrently \"npm run server\" \"npm run client\"",
     "server": "nodemon server.js",
     "client": "cd client && npm start",
-    "build": "cd client && npm run build",
+    "build": "npm run install-client && cd client && npm run build",
     "start": "node server.js",
-    "install-client": "cd client && npm install"
+    "install-client": "cd client && npm install",
+    "netlify-build": "npm run install-client && cd client && npm run build"
   },
   "dependencies": {
     "cors": "^2.8.5",
