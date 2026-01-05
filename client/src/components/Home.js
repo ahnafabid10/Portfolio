@@ -133,26 +133,23 @@ const Home = () => {
     setSubmitMessage('');
     
     try {
-      console.log('Submitting form with data:', formData);
-      
-      const response = await fetch('/api/contact', {
+      // Create FormData for Netlify Forms
+      const formDataToSend = new FormData();
+      formDataToSend.append('form-name', 'contact');
+      formDataToSend.append('name', formData.name);
+      formDataToSend.append('email', formData.email);
+      formDataToSend.append('message', formData.message);
+
+      const response = await fetch('/', {
         method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(formData),
+        body: formDataToSend,
       });
       
-      console.log('Response status:', response.status);
-      
-      const data = await response.json();
-      console.log('Response data:', data);
-      
-      if (data.success) {
-        setSubmitMessage(data.message);
+      if (response.ok) {
+        setSubmitMessage('Thank you for your message! I\'ll get back to you soon.');
         setFormData({ name: '', email: '', message: '' });
       } else {
-        setSubmitMessage(data.message || 'Something went wrong. Please try again.');
+        setSubmitMessage('Something went wrong. Please try again.');
       }
     } catch (error) {
       console.error('Network error:', error);
@@ -815,7 +812,21 @@ const Home = () => {
               transition={{ duration: 0.8 }}
               viewport={{ once: true }}
             >
-              <form onSubmit={handleSubmit} className="space-y-4">
+              <form 
+                onSubmit={handleSubmit} 
+                className="space-y-4"
+                name="contact"
+                method="POST"
+                data-netlify="true"
+                data-netlify-honeypot="bot-field"
+              >
+                {/* Hidden field for Netlify Forms */}
+                <input type="hidden" name="form-name" value="contact" />
+                
+                {/* Honeypot field for spam protection */}
+                <div style={{ display: 'none' }}>
+                  <input name="bot-field" />
+                </div>
                 <motion.div whileFocus={{ scale: 1.02 }}>
                   <input
                     type="text"
