@@ -5,14 +5,14 @@ const Projects = () => {
   const projects = [
     {
       id: 1,
-      title: "Nexus E-Commerce",
+      title: "Digital Life Lessons",
       description: "A high-performance headless commerce dashboard managing over 50k SKUs with real-time inventory tracking.",
       tech: "Next.js",
       image: "https://lh3.googleusercontent.com/aida-public/AB6AXuD9kllg2U_bldFO3Hi3yLUOxtNbSDc_SuWoF-sLk-glsxzI3UX4cHu0BNF6nyMo4EQ4Mj0oAAzWMddmDPSBVvwELNlsu-9IWdnuKNn_TgtJj72n0ZaWMwRhgdDlkOVD2bJj4xKrqKMossFGFeEVs-FBz316fmEhb4ErMJJQeLj_OZTKZbKST8e_uG1aKrla-_gkokqKNUy0gdJu4ZMh4b--C1nCTGMv-S55UFQFVlU33OpHHtZzZbJQDu1mYoEk3KuxyyotzOhn0mo"
     },
     {
       id: 2,
-      title: "Vault FinTech App",
+      title: "TravelEase",
       description: "Secure mobile banking experience with biometric authentication and real-time transaction visualization.",
       tech: "React Native",
       image: "https://lh3.googleusercontent.com/aida-public/AB6AXuBU3OEGrno2503OVpuryT7QFpH61W7nd5b9FFhlGJpc1I-YtK9AjCjZFV1AMaoWgAl-bi8OQZ0xkILrlihXb_cHTRwm2BT1i8eqF7xaisinrazl8rx4_lkJj841Fm9euAMEs6uVz-jcpGy0Ccp4XjL_tf0LzPLaWQIeBcnaUB5b70lGEs9BVWRx9FqZ_rt1wis7j90hKzhBuaO9GoCX9YFIae8VSQ0DjzFwnpO2zqr5mZvIxjzK_ijGUs_hXjybbwVnHgUfhQqqrZo"

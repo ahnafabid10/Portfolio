@@ -150,11 +150,19 @@ const ProjectDetails = ({ project, onClose }) => {
                 <div>
                   <h4 className="text-white font-bold mb-1">Key Features</h4>
                   <ul className="text-gray-300 text-sm leading-relaxed space-y-1">
-                    <li>• Responsive design with mobile-first approach</li>
-                    <li>• Real-time data synchronization</li>
-                    <li>• Advanced user authentication and authorization</li>
-                    <li>• Optimized performance and SEO</li>
-                    <li>• Comprehensive testing and documentation</li>
+                    {project.keyFeatures ? (
+                      project.keyFeatures.slice(0, 8).map((feature, index) => (
+                        <li key={index}>• {feature}</li>
+                      ))
+                    ) : (
+                      <>
+                        <li>• Responsive design with mobile-first approach</li>
+                        <li>• Real-time data synchronization</li>
+                        <li>• Advanced user authentication and authorization</li>
+                        <li>• Optimized performance and SEO</li>
+                        <li>• Comprehensive testing and documentation</li>
+                      </>
+                    )}
                   </ul>
                 </div>
               </div>

@@ -181,36 +181,39 @@ const Home = () => {
   const projects = [
     {
       id: 1,
-      title: "Nexus E-Commerce",
-      subtitle: "Headless Commerce Dashboard",
-      description: "A high-performance headless commerce dashboard managing over 50k SKUs with real-time inventory tracking.",
-      overview: "A comprehensive dashboard solution designed for high-volume retailers. The goal was to decouple the frontend from the backend logic, allowing marketing teams to update content without developer intervention while maintaining sub-second page loads.",
-      challenges: "Handling the state management for 50k+ products was causing browser lag. I implemented virtual scrolling and optimistic UI updates using React Query to ensure the interface remained responsive even during heavy data fetching operations.",
-      improvements: "Plan to integrate AI-driven sales forecasting using TensorFlow.js directly in the browser and add WebSocket support for collaborative inventory editing among multiple warehouse managers.",
-      tech: ["Next.js", "TypeScript", "Tailwind CSS", "Prisma", "PostgreSQL"],
-      image: "https://lh3.googleusercontent.com/aida-public/AB6AXuD9kllg2U_bldFO3Hi3yLUOxtNbSDc_SuWoF-sLk-glsxzI3UX4cHu0BNF6nyMo4EQ4Mj0oAAzWMddmDPSBVvwELNlsu-9IWdnuKNn_TgtJj72n0ZaWMwRhgdDlkOVD2bJj4xKrqKMossFGFeEVs-FBz316fmEhb4ErMJJQeLj_OZTKZbKST8e_uG1aKrla-_gkokqKNUy0gdJu4ZMh4b--C1nCTGMv-S55UFQFVlU33OpHHtZzZbJQDu1mYoEk3KuxyyotzOhn0mo"
+      title: "Digital Life Lessons",
+      subtitle: "Personal Growth & Wisdom Platform",
+      description: "A platform where users can create, store, and share meaningful life lessons, personal growth insights, and wisdom gathered over time.",
+      overview: "A comprehensive platform for personal development that allows users to add, manage, and explore life lessons. Users can track their learning progress, interact with public lessons, and enjoy both free and premium content while maintaining a secure and responsive experience across devices.",
+      challenges: "Managing authentication, subscription plans, and secure access to premium content required careful handling of Firebase, MongoDB, and Stripe integrations. Additionally, filtering and rendering thousands of lessons with dynamic engagement features caused potential UI performance bottlenecks, solved via React Query, optimized state management, and lazy loading.",
+      improvements: "Future plans include adding AI-powered lesson recommendations, collaborative learning groups, real-time notifications, cryptocurrency support, AI-powered spending insights, and integration with popular investment platforms for a complete financial ecosystem.",
+      tech: ["React 19.x", "Vite", "TailwindCSS", "DaisyUI", "Styled Components", "React Router v7", "React Query", "React Hook Form", "Lottie React", "Recharts", "Node.js", "Express", "MongoDB", "Firebase Admin SDK", "Stripe", "RESTful APIs"],
+      keyFeatures: ["User Authentication (Email/password + Google login)", "Free and Premium subscription plans with Stripe", "Add, update, delete, and view life lessons", "Public/private lesson visibility with Premium-only access", "Browse and search public lessons with category & emotional tone filters", "Favorite lessons and track contributions", "Engagement features: Likes, comments, share buttons, report inappropriate lessons", "Admin dashboard for managing users, lessons, and reported content", "Responsive design across desktop, tablet, and mobile", "Lottie animations for dynamic feedback", "Secure Firebase and MongoDB integration", "Protected routes and token verification", "Loading spinners, toast notifications, SweetAlert2 feedback", "Cryptocurrency support", "AI-powered spending insights"],
+      image: "/Digital Life Lessons.png"
     },
     {
       id: 2,
-      title: "Vault FinTech App",
-      subtitle: "Mobile Banking Application",
-      description: "Secure mobile banking experience with biometric authentication and real-time transaction visualization.",
-      overview: "A cutting-edge mobile banking application focused on security and user experience. Features include biometric authentication, real-time transaction processing, and comprehensive financial analytics.",
-      challenges: "Implementing secure biometric authentication while maintaining smooth user experience across different devices. Solved by creating a unified authentication layer with fallback mechanisms.",
-      improvements: "Planning to add cryptocurrency support, AI-powered spending insights, and integration with popular investment platforms for a complete financial ecosystem.",
-      tech: ["React Native", "Node.js", "MongoDB", "JWT"],
-      image: "https://lh3.googleusercontent.com/aida-public/AB6AXuBU3OEGrno2503OVpuryT7QFpH61W7nd5b9FFhlGJpc1I-YtK9AjCjZFV1AMaoWgAl-bi8OQZ0xkILrlihXb_cHTRwm2BT1i8eqF7xaisinrazl8rx4_lkJj841Fm9euAMEs6uVz-jcpGy0Ccp4XjL_tf0LzPLaWQIeBcnaUB5b70lGEs9BVWRx9FqZ_rt1wis7j90hKzhBuaO9GoCX9YFIae8VSQ0DjzFwnpO2zqr5mZvIxjzK_ijGUs_hXjybbwVnHgUfhQqqrZo"
+      title: "TravelEase",
+      subtitle: "Vehicle Booking & Trip Management Platform",
+      description: "A full-stack MERN application for vehicle rentals and trip management, allowing users to explore, book, and manage vehicles through a modern and responsive interface.",
+      overview: "TravelEase enables users to browse vehicles, manage personal listings, book trips, and update details seamlessly. The platform combines Firebase Authentication for secure login, MongoDB for data management, and a responsive, interactive frontend with advanced sorting, filtering, and animation features.",
+      challenges: "Implementing a smooth user experience while handling multiple private routes, booking storage, and CRUD operations required careful management of state and database interactions. Ensuring responsive layouts across devices and integrating date handling with date-fns alongside Framer Motion animations posed additional design and performance challenges.",
+      improvements: "Future enhancements could include AI-driven vehicle recommendations, real-time availability tracking, payment integration for bookings, and expanded analytics for vehicle owners to track bookings and user engagement.",
+      tech: ["React.js", "React Router", "Firebase Authentication", "Tailwind CSS", "Axios", "TanStack Query", "Framer Motion", "React Spring", "Node.js", "Express.js", "MongoDB", "CORS", "Netlify", "Vercel"],
+      keyFeatures: ["Firebase Authentication (Email/Password + Google Login)", "Add, Update, Delete Vehicles with MongoDB storage", "Vehicle Details Page with booking functionality", "Responsive and modern UI with Dark/Light Theme toggle", "Sorting and filtering on 'All Vehicles' page", "Uses date-fns for date formatting", "Fast API handling with Axios / TanStack Query", "Private routes for user-specific pages (My Vehicles, My Bookings, Add Vehicle)", "Custom 404 Page and Loading Spinner", "Protected routes with Firebase authorization", "Framer Motion / React Spring animations", "Unique UI theme, consistent headings, balanced spacing, and uniform cards"],
+      image: "/TravelEase.png"
     },
     {
       id: 3,
-      title: "Flow Task Manager",
-      subtitle: "Collaborative SaaS Platform",
-      description: "Collaborative SaaS platform enabling teams to manage workflows with drag-and-drop kanban boards.",
-      overview: "A comprehensive project management solution designed for modern teams. Features real-time collaboration, customizable workflows, and advanced analytics to boost team productivity.",
-      challenges: "Managing real-time collaboration with multiple users editing simultaneously. Implemented operational transformation algorithms to handle concurrent edits without conflicts.",
-      improvements: "Adding AI-powered task prioritization, time tracking with smart suggestions, and integration with popular development tools like GitHub and Slack.",
-      tech: ["Vue.js", "Express.js", "Firebase", "Tailwind CSS"],
-      image: "https://lh3.googleusercontent.com/aida-public/AB6AXuArYzOUIgk6kC5DWIpovqVPQs5uSg0uPwL4IGwlXTqkLAZrgTIvTG7zlD_Oo4jDTb2vGHuadpHlEq827F3g9lpDqQQktaNvYqwsXxN3wgybxHDYTh-wOXjPJTcDNNpYQ8PZksoNYGoipX98N_X5Dgm9-rJBnIFOSD-fKxnloZgTOSW0XqOQgQCSujFHQiO1WqWY4aMLkhIqnMJfiRS0s_V6AjqA3A9anOB5ugH1TxXNMwOVwV3sv6HW8mX2pSImAt38Dnf7avhZVSo"
+      title: "GreenNest",
+      subtitle: "Indoor Plant Care & Store",
+      description: "A single-page web application for plant lovers to explore, buy, and care for indoor plants while booking expert consultations for a greener lifestyle.",
+      overview: "GreenNest allows users to browse indoor plants, read care guides, book expert consultations, and manage personal profiles. It combines secure Firebase authentication, dynamic plant data from JSON, and a modern, responsive frontend with smooth animations and protected routes.",
+      challenges: "Implementing protected routes with redirection, real-time profile updates via Firebase, password validation with custom error messages, and integrating Swiper.js/Framer Motion sliders for a responsive and interactive UI were key technical challenges.",
+      improvements: "Future plans could include online payment integration for plant purchases, AI-driven plant care recommendations, real-time stock updates, and social sharing for plants and expert consultations.",
+      tech: ["React.js", "React Router", "Tailwind CSS", "DaisyUI", "Framer Motion", "Swiper.js", "Firebase Authentication", "Local JSON Data", "React Icons", "React Hot Toast", "SweetAlert2"],
+      keyFeatures: ["Secure Firebase Authentication (Email/Password + Google Login)", "Protected routes for Plant Details & Profile pages", "Dynamic plant display from JSON data", "Plant Details Page with Book Consultation form", "Responsive and modern UI with dark/light design", "Swiper.js slider and Framer Motion animations", "Password validation and custom error messages", "Real-time profile update using Firebase updateProfile()", "Bonus creative sections: Plant of the Week, Best Sellers", "Smooth navigation with no page reloads or crashes"],
+      image: "/GreenNest.png"
     }
   ];
 
@@ -220,24 +223,18 @@ const Home = () => {
 
   const handleDownloadResume = async () => {
     try {
-      const response = await fetch('/api/download-resume');
-      if (response.ok) {
-        const blob = await response.blob();
-        const url = window.URL.createObjectURL(blob);
-        const a = document.createElement('a');
-        a.href = url;
-        a.download = 'Ahnaf_Abid_Resume.pdf';
-        document.body.appendChild(a);
-        a.click();
-        window.URL.revokeObjectURL(url);
-        document.body.removeChild(a);
-      } else {
-        // Fallback if no resume file
-        alert('Resume download is currently unavailable. Please contact me at ahnafabid600@gmail.com');
-      }
+      // Direct download from public folder
+      const link = document.createElement('a');
+      link.href = '/resume.pdf';
+      link.download = 'Ahnaf_Abid_Resume.pdf';
+      link.target = '_blank';
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
     } catch (error) {
       console.error('Download failed:', error);
-      alert('Resume download failed. Please contact me at ahnafabid600@gmail.com');
+      // Fallback - open in new tab
+      window.open('/resume.pdf', '_blank');
     }
   };
 
@@ -326,7 +323,7 @@ const Home = () => {
               <span className="text-sm text-gray-400">Follow me:</span>
               <div className="flex space-x-3">
                 <motion.a 
-                  href="https://linkedin.com/in/ahnafabid" 
+                  href="https://linkedin.com/in/ahnafabid10" 
                   target="_blank" 
                   rel="noopener noreferrer" 
                   className="h-10 w-10 rounded-full border bg-gray-800 border-gray-600 text-gray-400 hover:text-white hover:border-white flex items-center justify-center transition-all"
@@ -338,7 +335,7 @@ const Home = () => {
                   </svg>
                 </motion.a>
                 <motion.a 
-                  href="https://github.com/ahnafabid" 
+                  href="https://github.com/ahnafabid10" 
                   target="_blank" 
                   rel="noopener noreferrer" 
                   className="h-10 w-10 rounded-full border bg-gray-800 border-gray-600 text-gray-400 hover:text-white hover:border-white flex items-center justify-center transition-all"
@@ -350,7 +347,7 @@ const Home = () => {
                   </svg>
                 </motion.a>
                 <motion.a 
-                  href="https://twitter.com/ahnafabid" 
+                  href="https://twitter.com/ahnafabid03" 
                   target="_blank" 
                   rel="noopener noreferrer" 
                   className="h-10 w-10 rounded-full bg-gray-800 border border-gray-600 flex items-center justify-center text-gray-400 hover:text-white hover:border-white transition-all"
@@ -362,7 +359,7 @@ const Home = () => {
                   </svg>
                 </motion.a>
                 <motion.a 
-                  href="https://facebook.com/ahnafabid" 
+                  href="https://facebook.com/ahnafabid59" 
                   target="_blank" 
                   rel="noopener noreferrer" 
                   className="h-10 w-10 rounded-full border bg-gray-800 border-gray-600 text-gray-400 hover:text-white hover:border-white flex items-center justify-center transition-all"
@@ -406,7 +403,7 @@ const Home = () => {
               <img 
                 alt="Portrait of Ahnaf Abid" 
                 className="object-cover w-full h-full transform transition hover:scale-105 duration-700 filter grayscale hover:grayscale-0" 
-                src="https://lh3.googleusercontent.com/aida-public/AB6AXuAEEcD012cSqkeLLlG7Yzr2t1Hilcus66AATR9PvXxu0u-gv2fFV8ZXgoiq-EbALuR7d1e09D-qN9VkkGQW3EJUNHkKOkBlpF2k-aB32es0AauseSOXjEbiGowMUkD45eiIqSLoWm-4LzE8jS5LQ5WwcwNVRnWlxBI-RsbV9lJUhXgH44dF3Un1x_G_4aaadqo9pBGTcK4TFABPokAOmYx4fO7PchHlM1JprU-27fr_zgHOtQNu8swEGvzLJp9wgjMPbDXtAXWt4Ik"
+                src="/Abid.jpg"
               />
             </div>
           </motion.div>
@@ -429,9 +426,9 @@ const Home = () => {
                 <span className="material-icons text-4xl">architecture</span>
               </div>
               <div>
-                <h3 className="text-4xl font-bold text-white">8+</h3>
+                <h3 className="text-4xl font-bold text-white">6+</h3>
                 <p className="text-xs font-bold tracking-widest uppercase mt-1 text-gray-400">
-                  Years Experience
+                  Months Experience
                 </p>
               </div>
             </motion.div>
@@ -444,7 +441,7 @@ const Home = () => {
                 <span className="material-icons text-4xl">inventory_2</span>
               </div>
               <div>
-                <h3 className="text-4xl font-bold text-white">50+</h3>
+                <h3 className="text-4xl font-bold text-white">3+</h3>
                 <p className="text-xs font-bold tracking-widest uppercase mt-1 text-gray-400">
                   Projects Shipped
                 </p>
@@ -479,8 +476,7 @@ const Home = () => {
             </div>
             <h3 className="text-xl font-bold mb-4 text-white">The Journey</h3>
             <p className="text-sm leading-relaxed text-gray-300">
-              I started coding by hacking apart HTML templates and fell in love with the instant feedback loop of web development. 
-              From those early static sites to complex SPAs, my drive has always been curiosity and the joy of creation.
+              I started coding by modifying HTML templates and quickly fell in love with building websites. From simple pages to complex web apps, I’m driven by curiosity and the joy of creating.
             </p>
           </motion.div>
           
@@ -493,8 +489,7 @@ const Home = () => {
             </div>
             <h3 className="text-xl font-bold mb-4 text-white">The Work</h3>
             <p className="text-sm leading-relaxed text-gray-300">
-              I enjoy crafting reusable component systems, optimizing performance metrics, and obsessing over micro-interactions. 
-              Clean code, semantic HTML, and accessible design are my non-negotiables for any project.
+              I enjoy building reusable components, improving website performance, and making small design details perfect. Clean code, clear HTML, and accessible design are important to me.
             </p>
           </motion.div>
           
@@ -507,8 +502,7 @@ const Home = () => {
             </div>
             <h3 className="text-xl font-bold mb-4 text-white">The Human</h3>
             <p className="text-sm leading-relaxed text-gray-300">
-              When I'm not shipping code, you can find me exploring local specialty coffee shops, gaming, or tinkering with smart home automation. 
-              I believe a balanced life fuels the best creativity.
+              When I’m not coding, I like visiting coffee shops, gaming, or working with smart home gadgets. I believe balancing work and life sparks creativity.
             </p>
           </motion.div>
         </section>
@@ -538,30 +532,13 @@ const Home = () => {
               <div className="relative z-10 flex flex-col h-full">
                 <div className="flex items-center justify-between mb-4">
                   <span className="px-3 py-1 rounded-full text-xs font-semibold border bg-white/10 text-white border-white/20">
-                    2014 - 2018
-                  </span>
-                  <span className="text-sm font-medium text-gray-400">
-                    CGPA: 3.85/4.00
+                    2023 - current
                   </span>
                 </div>
                 <h3 className="text-2xl font-bold mb-1 text-white">
-                  B.Sc. in Computer Science
+                  B.Sc. in Mathematics
                 </h3>
-                <p className="font-medium mb-6 text-white">North South University</p>
-                <ul className="space-y-3 mt-auto">
-                  <li className="flex items-start space-x-3 text-sm text-gray-300">
-                    <span className="material-icons text-base mt-0.5 text-white">check_circle_outline</span>
-                    <span>Major in Software Engineering & Information Systems</span>
-                  </li>
-                  <li className="flex items-start space-x-3 text-sm text-gray-300">
-                    <span className="material-icons text-base mt-0.5 text-white">check_circle_outline</span>
-                    <span>Vice Chancellor's Gold Medalist for Academic Excellence</span>
-                  </li>
-                  <li className="flex items-start space-x-3 text-sm text-gray-300">
-                    <span className="material-icons text-base mt-0.5 text-white">check_circle_outline</span>
-                    <span>Published research paper on Human Computer Interaction</span>
-                  </li>
-                </ul>
+                <p className="font-medium mb-6 text-white">National University</p>
               </div>
             </motion.div>
             
@@ -579,30 +556,13 @@ const Home = () => {
               <div className="relative z-10 flex flex-col h-full">
                 <div className="flex items-center justify-between mb-4">
                   <span className="px-3 py-1 rounded-full text-xs font-semibold border bg-gray-800 text-gray-300 border-gray-700">
-                    2012 - 2014
-                  </span>
-                  <span className="text-sm font-medium text-gray-400">
-                    GPA: 5.00/5.00
+                    2020 - 2022
                   </span>
                 </div>
                 <h3 className="text-2xl font-bold mb-1 text-white">
                   Higher Secondary Certificate
                 </h3>
-                <p className="font-medium mb-6 text-white">Dhaka City College</p>
-                <ul className="space-y-3 mt-auto">
-                  <li className="flex items-start space-x-3 text-sm text-gray-300">
-                    <span className="material-icons text-base mt-0.5 text-white">check_circle_outline</span>
-                    <span>Concentration in Science (Physics, Chemistry, Math)</span>
-                  </li>
-                  <li className="flex items-start space-x-3 text-sm text-gray-300">
-                    <span className="material-icons text-base mt-0.5 text-white">check_circle_outline</span>
-                    <span>Member of the College Debating Society</span>
-                  </li>
-                  <li className="flex items-start space-x-3 text-sm text-gray-300">
-                    <span className="material-icons text-base mt-0.5 text-white">check_circle_outline</span>
-                    <span>Active participant in Science Fair 2013</span>
-                  </li>
-                </ul>
+                <p className="font-medium mb-6 text-white">Shahid Syed Nazrul Islam College</p>
               </div>
             </motion.div>
           </div>
@@ -707,27 +667,8 @@ const Home = () => {
             ))}
           </div>
 
-          {/* Contact Info in Projects */}
-          <motion.div 
-            className="mt-12 text-center"
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-          >
-            <p className="mb-4 text-gray-400">Interested in working together?</p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-              <a href="mailto:ahnafabid600@gmail.com" className="flex items-center gap-2 text-white hover:text-gray-300 transition-colors">
-                <span className="material-icons">mail</span>
-                ahnafabid600@gmail.com
-              </a>
-              <span className="hidden sm:block text-gray-600">|</span>
-              <a href="tel:+8801326585958" className="flex items-center gap-2 text-gray-300 hover:text-white transition-colors">
-                <span className="material-icons">call</span>
-                +880 1326 585958
-              </a>
-            </div>
-          </motion.div>
+      
+
         </section>
 
         {/* Contact Section */}
