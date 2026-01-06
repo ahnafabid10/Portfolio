@@ -1,7 +1,7 @@
 {
   "name": "ahnaf-portfolio",
   "version": "1.0.0",
-  "description": "Portfolio website for Ahnaf Abid - Senior Frontend Engineer",
+  "description": "Portfolio website for Ahnaf Abid - MERN Stack Developer",
   "main": "server.js",
   "scripts": {
     "dev": "concurrently \"npm run server\" \"npm run client\"",
