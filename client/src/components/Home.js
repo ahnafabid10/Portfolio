@@ -187,9 +187,11 @@ const Home = () => {
       overview: "A comprehensive platform for personal development that allows users to add, manage, and explore life lessons. Users can track their learning progress, interact with public lessons, and enjoy both free and premium content while maintaining a secure and responsive experience across devices.",
       challenges: "Managing authentication, subscription plans, and secure access to premium content required careful handling of Firebase, MongoDB, and Stripe integrations. Additionally, filtering and rendering thousands of lessons with dynamic engagement features caused potential UI performance bottlenecks, solved via React Query, optimized state management, and lazy loading.",
       improvements: "Future plans include adding AI-powered lesson recommendations, collaborative learning groups, real-time notifications, cryptocurrency support, AI-powered spending insights, and integration with popular investment platforms for a complete financial ecosystem.",
-      tech: ["React 19.x", "Vite", "TailwindCSS", "DaisyUI", "Styled Components", "React Router v7", "React Query", "React Hook Form", "Lottie React", "Recharts", "Node.js", "Express", "MongoDB", "Firebase Admin SDK", "Stripe", "RESTful APIs"],
+      tech: ["React 19.x", "Vite", "TailwindCSS", "DaisyUI", "Styled Components", "React Router v7", "React Query", "React Hook Form", "Lottie React", "Recharts", "Node.js", "Express", "MongoDB", "Firebase Admin SDK", "Stripe", "JWT", "RESTful APIs"],
       keyFeatures: ["User Authentication (Email/password + Google login)", "Free and Premium subscription plans with Stripe", "Add, update, delete, and view life lessons", "Public/private lesson visibility with Premium-only access", "Browse and search public lessons with category & emotional tone filters", "Favorite lessons and track contributions", "Engagement features: Likes, comments, share buttons, report inappropriate lessons", "Admin dashboard for managing users, lessons, and reported content", "Responsive design across desktop, tablet, and mobile", "Lottie animations for dynamic feedback", "Secure Firebase and MongoDB integration", "Protected routes and token verification", "Loading spinners, toast notifications, SweetAlert2 feedback", "Cryptocurrency support", "AI-powered spending insights"],
-      image: "/Digital Life Lessons.png"
+      image: "/Digital Life Lessons.png",
+      liveDemo: "https://digital-life-lesson11.netlify.app/",
+      github: "https://github.com/ahnafabid10/digital-life-lessons-client-side"
     },
     {
       id: 2,
@@ -201,7 +203,9 @@ const Home = () => {
       improvements: "Future enhancements could include AI-driven vehicle recommendations, real-time availability tracking, payment integration for bookings, and expanded analytics for vehicle owners to track bookings and user engagement.",
       tech: ["React.js", "React Router", "Firebase Authentication", "Tailwind CSS", "Axios", "TanStack Query", "Framer Motion", "React Spring", "Node.js", "Express.js", "MongoDB", "CORS", "Netlify", "Vercel"],
       keyFeatures: ["Firebase Authentication (Email/Password + Google Login)", "Add, Update, Delete Vehicles with MongoDB storage", "Vehicle Details Page with booking functionality", "Responsive and modern UI with Dark/Light Theme toggle", "Sorting and filtering on 'All Vehicles' page", "Uses date-fns for date formatting", "Fast API handling with Axios / TanStack Query", "Private routes for user-specific pages (My Vehicles, My Bookings, Add Vehicle)", "Custom 404 Page and Loading Spinner", "Protected routes with Firebase authorization", "Framer Motion / React Spring animations", "Unique UI theme, consistent headings, balanced spacing, and uniform cards"],
-      image: "/TravelEase.png"
+      image: "/TravelEase.png",
+      liveDemo: "https://traveleaseb12a10.netlify.app/",
+      github: "https://github.com/ahnafabid10/TravelEase-client-side"
     },
     {
       id: 3,
@@ -213,7 +217,9 @@ const Home = () => {
       improvements: "Future plans could include online payment integration for plant purchases, AI-driven plant care recommendations, real-time stock updates, and social sharing for plants and expert consultations.",
       tech: ["React.js", "React Router", "Tailwind CSS", "DaisyUI", "Framer Motion", "Swiper.js", "Firebase Authentication", "Local JSON Data", "React Icons", "React Hot Toast", "SweetAlert2"],
       keyFeatures: ["Secure Firebase Authentication (Email/Password + Google Login)", "Protected routes for Plant Details & Profile pages", "Dynamic plant display from JSON data", "Plant Details Page with Book Consultation form", "Responsive and modern UI with dark/light design", "Swiper.js slider and Framer Motion animations", "Password validation and custom error messages", "Real-time profile update using Firebase updateProfile()", "Bonus creative sections: Plant of the Week, Best Sellers", "Smooth navigation with no page reloads or crashes"],
-      image: "/GreenNest.png"
+      image: "/GreenNest.png",
+      liveDemo: "https://greennesta9.netlify.app/",
+      github: "https://github.com/ahnafabid10/GreenNest"
     }
   ];
 
@@ -619,7 +625,7 @@ const Home = () => {
             {projects.map((project) => (
               <motion.article 
                 key={project.id} 
-                className="project-card group relative flex flex-col rounded-2xl overflow-hidden border bg-gray-900 border-gray-700 hover:border-white transition-all duration-300 hover:-translate-y-1"
+                className="project-card group relative flex flex-col rounded-2xl overflow-hidden border bg-gray-900 border-gray-700 hover:border-blue-500/50 transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_0_30px_rgba(59,130,246,0.3)]"
                 whileHover={{ y: -10, scale: 1.02 }}
                 initial={{ opacity: 0, y: 60 }}
                 whileInView={{ opacity: 1, y: 0 }}

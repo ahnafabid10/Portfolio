@@ -6,23 +6,29 @@ const Projects = () => {
     {
       id: 1,
       title: "Digital Life Lessons",
-      description: "A high-performance headless commerce dashboard managing over 50k SKUs with real-time inventory tracking.",
-      tech: "Next.js",
-      image: "https://lh3.googleusercontent.com/aida-public/AB6AXuD9kllg2U_bldFO3Hi3yLUOxtNbSDc_SuWoF-sLk-glsxzI3UX4cHu0BNF6nyMo4EQ4Mj0oAAzWMddmDPSBVvwELNlsu-9IWdnuKNn_TgtJj72n0ZaWMwRhgdDlkOVD2bJj4xKrqKMossFGFeEVs-FBz316fmEhb4ErMJJQeLj_OZTKZbKST8e_uG1aKrla-_gkokqKNUy0gdJu4ZMh4b--C1nCTGMv-S55UFQFVlU33OpHHtZzZbJQDu1mYoEk3KuxyyotzOhn0mo"
+      description: "A platform where users can create, store, and share meaningful life lessons, personal growth insights, and wisdom gathered over time.",
+      tech: "React 19.x",
+      image: "/Digital Life Lessons.png",
+      liveDemo: "https://digital-life-lesson11.netlify.app/",
+      github: "https://github.com/ahnafabid10/digital-life-lessons-client-side"
     },
     {
       id: 2,
       title: "TravelEase",
-      description: "Secure mobile banking experience with biometric authentication and real-time transaction visualization.",
-      tech: "React Native",
-      image: "https://lh3.googleusercontent.com/aida-public/AB6AXuBU3OEGrno2503OVpuryT7QFpH61W7nd5b9FFhlGJpc1I-YtK9AjCjZFV1AMaoWgAl-bi8OQZ0xkILrlihXb_cHTRwm2BT1i8eqF7xaisinrazl8rx4_lkJj841Fm9euAMEs6uVz-jcpGy0Ccp4XjL_tf0LzPLaWQIeBcnaUB5b70lGEs9BVWRx9FqZ_rt1wis7j90hKzhBuaO9GoCX9YFIae8VSQ0DjzFwnpO2zqr5mZvIxjzK_ijGUs_hXjybbwVnHgUfhQqqrZo"
+      description: "A full-stack MERN application for vehicle rentals and trip management, allowing users to explore, book, and manage vehicles through a modern and responsive interface.",
+      tech: "React.js",
+      image: "/TravelEase.png",
+      liveDemo: "https://traveleaseb12a10.netlify.app/",
+      github: "https://github.com/ahnafabid10/TravelEase-client-side"
     },
     {
       id: 3,
-      title: "Flow Task Manager",
-      description: "Collaborative SaaS platform enabling teams to manage workflows with drag-and-drop kanban boards.",
-      tech: "Vue.js",
-      image: "https://lh3.googleusercontent.com/aida-public/AB6AXuArYzOUIgk6kC5DWIpovqVPQs5uSg0uPwL4IGwlXTqkLAZrgTIvTG7zlD_Oo4jDTb2vGHuadpHlEq827F3g9lpDqQQktaNvYqwsXxN3wgybxHDYTh-wOXjPJTcDNNpYQ8PZksoNYGoipX98N_X5Dgm9-rJBnIFOSD-fKxnloZgTOSW0XqOQgQCSujFHQiO1WqWY4aMLkhIqnMJfiRS0s_V6AjqA3A9anOB5ugH1TxXNMwOVwV3sv6HW8mX2pSImAt38Dnf7avhZVSo"
+      title: "GreenNest",
+      description: "A single-page web application for plant lovers to explore, buy, and care for indoor plants while booking expert consultations for a greener lifestyle.",
+      tech: "React.js",
+      image: "/GreenNest.png",
+      liveDemo: "https://greennesta9.netlify.app/",
+      github: "https://github.com/ahnafabid10/GreenNest"
     }
   ];
 
@@ -97,18 +103,18 @@ const Projects = () => {
                     </div>
                     <div 
                       className="w-full h-full bg-cover bg-center"
-                      style={{ backgroundImage: 'url("https://lh3.googleusercontent.com/aida-public/AB6AXuC5GKaFwQZ1NUt1uI1dE5td0LTFNBl6VxFT9cuyvrfmaUbxvStexh_RGOrHSR9cllCufyJVu5p4mFT5YJ8TMNnslPJd1iIf4WhwgQWjJFMUlxX7-T3R6ViVXiF9UVBjTsyXLYrnKjjeEbOPS3U6u9bNqmjvbr_3BpZ-zBS_iiZ6PNc7qlSI48TPRXeoS2_dtUezG_xwENCtbb_qJor_yeW3MzZePVNuj3o_ebvPEj124mvagSEm9_ERLrn3qP_rX7CYHrbNhOhdhBI")' }}
+                      style={{ backgroundImage: 'url("/Digital Life Lessons.png")' }}
                     ></div>
                   </div>
                   
                   <div className="flex flex-col gap-3">
                     <h3 className="text-white text-sm uppercase tracking-wider font-bold opacity-60">Key Actions</h3>
                     <div className="flex flex-wrap gap-3">
-                      <a href="#" className="flex-1 flex items-center justify-center gap-2 bg-primary hover:bg-primary/90 text-white py-3 px-4 rounded-lg font-medium transition-colors min-w-[140px]">
+                      <a href="https://digital-life-lesson11.netlify.app/" target="_blank" rel="noopener noreferrer" className="flex-1 flex items-center justify-center gap-2 bg-primary hover:bg-primary/90 text-white py-3 px-4 rounded-lg font-medium transition-colors min-w-[140px]">
                         <span className="material-icons text-[20px]">rocket_launch</span>
                         Live Demo
                       </a>
-                      <a href="#" className="flex-1 flex items-center justify-center gap-2 bg-gray-700 hover:bg-gray-600 text-white py-3 px-4 rounded-lg font-medium transition-colors min-w-[140px]">
+                      <a href="https://github.com/ahnafabid10/digital-life-lessons-client-side" target="_blank" rel="noopener noreferrer" className="flex-1 flex items-center justify-center gap-2 bg-gray-700 hover:bg-gray-600 text-white py-3 px-4 rounded-lg font-medium transition-colors min-w-[140px]">
                         <span className="material-icons text-[20px]">code</span>
                         GitHub Repo
                       </a>
@@ -118,7 +124,7 @@ const Projects = () => {
                   <div className="flex flex-col gap-3 mt-auto">
                     <h3 className="text-white text-sm uppercase tracking-wider font-bold opacity-60">Tech Stack</h3>
                     <div className="flex flex-wrap gap-2">
-                      {['Next.js 14', 'TypeScript', 'Tailwind CSS', 'Prisma', 'PostgreSQL'].map((tech) => (
+                      {['React 19.x', 'Vite', 'TailwindCSS', 'MongoDB', 'Firebase', 'Stripe', 'JWT'].map((tech) => (
                         <span key={tech} className="px-3 py-1 rounded-md bg-blue-500/10 text-blue-400 text-xs font-mono border border-blue-500/20">
                           {tech}
                         </span>
@@ -130,8 +136,8 @@ const Projects = () => {
                 {/* Right Panel: Info */}
                 <div className="w-full lg:w-7/12 p-6 lg:p-10 flex flex-col gap-8">
                   <div>
-                    <h2 className="text-3xl font-bold text-white mb-2">Nexus E-Commerce</h2>
-                    <p className="text-primary text-lg font-medium">Headless Commerce Dashboard</p>
+                    <h2 className="text-3xl font-bold text-white mb-2">Digital Life Lessons</h2>
+                    <p className="text-primary text-lg font-medium">Personal Growth & Wisdom Platform</p>
                   </div>
                   
                   <div className="space-y-6">
@@ -144,8 +150,7 @@ const Projects = () => {
                       <div>
                         <h4 className="text-white font-bold mb-1">Overview</h4>
                         <p className="text-gray-400 text-sm leading-relaxed">
-                          A comprehensive dashboard solution designed for high-volume retailers. The goal was to decouple the frontend from the backend logic, 
-                          allowing marketing teams to update content without developer intervention while maintaining sub-second page loads.
+                          A comprehensive platform for personal development that allows users to add, manage, and explore life lessons. Users can track their learning progress, interact with public lessons, and enjoy both free and premium content while maintaining a secure and responsive experience across devices.
                         </p>
                       </div>
                     </div>
@@ -159,8 +164,7 @@ const Projects = () => {
                       <div>
                         <h4 className="text-white font-bold mb-1">Challenges Faced</h4>
                         <p className="text-gray-400 text-sm leading-relaxed">
-                          Handling the state management for 50k+ products was causing browser lag. I implemented virtual scrolling and optimistic UI updates 
-                          using React Query to ensure the interface remained responsive even during heavy data fetching operations.
+                          Managing authentication, subscription plans, and secure access to premium content required careful handling of Firebase, MongoDB, and Stripe integrations. Additionally, filtering and rendering thousands of lessons with dynamic engagement features caused potential UI performance bottlenecks, solved via React Query, optimized state management, and lazy loading.
                         </p>
                       </div>
                     </div>
@@ -174,8 +178,7 @@ const Projects = () => {
                       <div>
                         <h4 className="text-white font-bold mb-1">Future Improvements</h4>
                         <p className="text-gray-400 text-sm leading-relaxed">
-                          Plan to integrate AI-driven sales forecasting using TensorFlow.js directly in the browser and add WebSocket support 
-                          for collaborative inventory editing among multiple warehouse managers.
+                          Future plans include adding AI-powered lesson recommendations, collaborative learning groups, real-time notifications, cryptocurrency support, AI-powered spending insights, and integration with popular investment platforms for a complete financial ecosystem.
                         </p>
                       </div>
                     </div>
