@@ -1,8 +1,10 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useRef } from 'react';
 import { motion } from 'framer-motion';
 import { gsap } from 'gsap';
 
 const ProjectDetails = ({ project, onClose }) => {
+  const scrollContainerRef = useRef(null);
+
   useEffect(() => {
     // Animate modal entrance
     gsap.fromTo('.project-modal', 
@@ -12,6 +14,11 @@ const ProjectDetails = ({ project, onClose }) => {
 
     // Prevent body scroll when modal is open
     document.body.style.overflow = 'hidden';
+    
+    // Add smooth scrolling to the details container
+    if (scrollContainerRef.current) {
+      scrollContainerRef.current.style.scrollBehavior = 'smooth';
+    }
     
     return () => {
       document.body.style.overflow = 'unset';
@@ -26,6 +33,19 @@ const ProjectDetails = ({ project, onClose }) => {
       ease: 'power2.in',
       onComplete: onClose
     });
+  };
+
+  // Smooth scroll to section
+  const scrollToSection = (sectionId) => {
+    const element = document.getElementById(sectionId);
+    if (element && scrollContainerRef.current) {
+      const container = scrollContainerRef.current;
+      const elementTop = element.offsetTop - container.offsetTop;
+      container.scrollTo({
+        top: elementTop - 20, // 20px offset for better visibility
+        behavior: 'smooth'
+      });
+    }
   };
 
   if (!project) return null;
@@ -148,14 +168,55 @@ const ProjectDetails = ({ project, onClose }) => {
                   ))}
                 </div>
               </motion.div>
+
+              {/* Navigation Menu */}
+              <motion.div 
+                className="flex flex-col gap-3"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.5 }}
+              >
+                <h3 className="text-white text-sm uppercase tracking-wider font-bold opacity-60">Quick Navigation</h3>
+                <div className="flex flex-col gap-2">
+                  <button 
+                    onClick={() => scrollToSection('overview-section')}
+                    className="text-left text-gray-300 hover:text-white transition-colors text-sm py-1 px-2 rounded hover:bg-white/10"
+                  >
+                    → Project Overview
+                  </button>
+                  <button 
+                    onClick={() => scrollToSection('challenges-section')}
+                    className="text-left text-gray-300 hover:text-white transition-colors text-sm py-1 px-2 rounded hover:bg-white/10"
+                  >
+                    → Challenges Faced
+                  </button>
+                  <button 
+                    onClick={() => scrollToSection('features-section')}
+                    className="text-left text-gray-300 hover:text-white transition-colors text-sm py-1 px-2 rounded hover:bg-white/10"
+                  >
+                    → Key Features
+                  </button>
+                  <button 
+                    onClick={() => scrollToSection('improvements-section')}
+                    className="text-left text-gray-300 hover:text-white transition-colors text-sm py-1 px-2 rounded hover:bg-white/10"
+                  >
+                    → Future Plans
+                  </button>
+                </div>
+              </motion.div>
             </div>
           </div>
 
           {/* Right Panel: Scrollable Content */}
           <div className="w-full lg:w-3/5 flex flex-col">
-            <div className="flex-1 overflow-y-auto p-6 lg:p-10 space-y-8 project-details-scroll">
+            <div 
+              ref={scrollContainerRef}
+              className="flex-1 overflow-y-auto p-6 lg:p-10 space-y-8 project-details-scroll"
+              style={{ scrollBehavior: 'smooth' }}
+            >
               {/* Project Description */}
               <motion.div
+                id="overview-section"
                 className="bg-gradient-to-r from-gray-800/50 to-gray-700/50 border border-gray-600/50 rounded-xl p-6 hover:border-gray-500/50 transition-all duration-300"
                 initial={{ opacity: 0, x: 50 }}
                 animate={{ opacity: 1, x: 0 }}
@@ -173,6 +234,7 @@ const ProjectDetails = ({ project, onClose }) => {
               
               {/* Challenges Section */}
               <motion.div 
+                id="challenges-section"
                 className="bg-gradient-to-r from-orange-500/10 to-red-500/10 border border-orange-500/20 rounded-xl p-6"
                 initial={{ opacity: 0, x: 50 }}
                 animate={{ opacity: 1, x: 0 }}
@@ -190,6 +252,7 @@ const ProjectDetails = ({ project, onClose }) => {
               
               {/* Key Features Section */}
               <motion.div 
+                id="features-section"
                 className="bg-gradient-to-r from-blue-500/10 to-purple-500/10 border border-blue-500/20 rounded-xl p-6"
                 initial={{ opacity: 0, x: 50 }}
                 animate={{ opacity: 1, x: 0 }}
@@ -240,6 +303,7 @@ const ProjectDetails = ({ project, onClose }) => {
               
               {/* Future Improvements Section */}
               <motion.div 
+                id="improvements-section"
                 className="bg-gradient-to-r from-green-500/10 to-emerald-500/10 border border-green-500/20 rounded-xl p-6"
                 initial={{ opacity: 0, x: 50 }}
                 animate={{ opacity: 1, x: 0 }}

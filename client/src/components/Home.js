@@ -199,9 +199,9 @@ const Home = () => {
       description: "A platform where users can create, store, and share meaningful life lessons, personal growth insights, and wisdom gathered over time.",
       overview: "A comprehensive platform for personal development that allows users to add, manage, and explore life lessons. Users can track their learning progress, interact with public lessons, and enjoy both free and premium content while maintaining a secure and responsive experience across devices.",
       challenges: "Managing authentication, subscription plans, and secure access to premium content required careful handling of Firebase, MongoDB, and Stripe integrations. Additionally, filtering and rendering thousands of lessons with dynamic engagement features caused potential UI performance bottlenecks, solved via React Query, optimized state management, and lazy loading.",
-      improvements: "Future plans include adding AI-powered lesson recommendations, collaborative learning groups, real-time notifications, cryptocurrency support, AI-powered spending insights, and integration with popular investment platforms for a complete financial ecosystem.",
+      improvements: "Future plans include adding AI-powered lesson recommendations, collaborative learning groups, real-time notifications, advanced analytics dashboard, and integration with popular productivity platforms for a complete personal development ecosystem.",
       tech: ["React 19.x", "Vite", "TailwindCSS", "DaisyUI", "Styled Components", "React Router v7", "React Query", "React Hook Form", "Lottie React", "Recharts", "Node.js", "Express", "MongoDB", "Firebase Admin SDK", "Stripe", "JWT", "RESTful APIs"],
-      keyFeatures: ["User Authentication (Email/password + Google login)", "Free and Premium subscription plans with Stripe", "Add, update, delete, and view life lessons", "Public/private lesson visibility with Premium-only access", "Browse and search public lessons with category & emotional tone filters", "Favorite lessons and track contributions", "Engagement features: Likes, comments, share buttons, report inappropriate lessons", "Admin dashboard for managing users, lessons, and reported content", "Responsive design across desktop, tablet, and mobile", "Lottie animations for dynamic feedback", "Secure Firebase and MongoDB integration", "Protected routes and token verification", "Loading spinners, toast notifications, SweetAlert2 feedback", "Cryptocurrency support", "AI-powered spending insights"],
+      keyFeatures: ["User Authentication (Email/password + Google login)", "Mock User and Admin Login for Testing", "Free and Premium subscription plans with Stripe", "Add, update, delete, and view life lessons", "Public/private lesson visibility with Premium-only access", "Browse and search public lessons with category & emotional tone filters", "Favorite lessons and track contributions", "Engagement features: Likes, comments, share buttons, report inappropriate lessons", "Admin dashboard for managing users, lessons, and reported content", "Responsive design across desktop, tablet, and mobile", "Lottie animations for dynamic feedback", "Secure Firebase and MongoDB integration", "Protected routes and token verification", "Loading spinners, toast notifications, SweetAlert2 feedback", "AI-powered spending insights"],
       image: "/Digital Life Lessons.png",
       liveDemo: "https://digital-life-lesson11.netlify.app/",
       github: "https://github.com/ahnafabid10/digital-life-lessons-client-side"
@@ -215,7 +215,7 @@ const Home = () => {
       challenges: "Implementing a smooth user experience while handling multiple private routes, booking storage, and CRUD operations required careful management of state and database interactions. Ensuring responsive layouts across devices and integrating date handling with date-fns alongside Framer Motion animations posed additional design and performance challenges.",
       improvements: "Future enhancements could include AI-driven vehicle recommendations, real-time availability tracking, payment integration for bookings, and expanded analytics for vehicle owners to track bookings and user engagement.",
       tech: ["React.js", "React Router", "Firebase Authentication", "Tailwind CSS", "Axios", "TanStack Query", "Framer Motion", "React Spring", "Node.js", "Express.js", "MongoDB", "CORS", "Netlify", "Vercel"],
-      keyFeatures: ["Firebase Authentication (Email/Password + Google Login)", "Add, Update, Delete Vehicles with MongoDB storage", "Vehicle Details Page with booking functionality", "Responsive and modern UI with Dark/Light Theme toggle", "Sorting and filtering on 'All Vehicles' page", "Uses date-fns for date formatting", "Fast API handling with Axios / TanStack Query", "Private routes for user-specific pages (My Vehicles, My Bookings, Add Vehicle)", "Custom 404 Page and Loading Spinner", "Protected routes with Firebase authorization", "Framer Motion / React Spring animations", "Unique UI theme, consistent headings, balanced spacing, and uniform cards"],
+      keyFeatures: ["Firebase Authentication (Email/Password + Google Login)", "Mock User Login Option for Testing", "User Dashboard for Managing Bookings and Vehicles", "Add, Update, Delete Vehicles with MongoDB storage", "Vehicle Details Page with booking functionality", "Responsive and modern UI with Dark/Light Theme toggle", "Sorting and filtering on 'All Vehicles' page", "Uses date-fns for date formatting", "Fast API handling with Axios / TanStack Query", "Private routes for user-specific pages (My Vehicles, My Bookings, Add Vehicle)", "Custom 404 Page and Loading Spinner", "Protected routes with Firebase authorization", "Framer Motion / React Spring animations", "Unique UI theme, consistent headings, balanced spacing, and uniform cards"],
       image: "/TravelEase.png",
       liveDemo: "https://traveleaseb12a10.netlify.app/",
       github: "https://github.com/ahnafabid10/TravelEase-client-side"
@@ -341,14 +341,6 @@ const Home = () => {
               >
                 <span className="material-icons text-sm">visibility</span>
                 <span>View Resume</span>
-              </motion.button>
-              <motion.button 
-                onClick={() => document.getElementById('projects').scrollIntoView({ behavior: 'smooth' })}
-                className="px-6 py-3 rounded-lg font-medium border border-gray-400 text-gray-300 hover:border-white hover:text-white transition-all"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-              >
-                View Projects
               </motion.button>
             </div>
             
