@@ -7,6 +7,7 @@ import Navigation from './Navigation';
 import WelcomeScreen from './WelcomeScreen';
 import TypeWriter from './TypeWriter';
 import ProjectDetails from './ProjectDetails';
+import { initEmailJS, sendEmail } from '../utils/emailjs';
 
 // Register GSAP plugins
 gsap.registerPlugin(ScrollTrigger);
@@ -26,6 +27,11 @@ const Home = () => {
   const heroRef = useRef();
   const aboutCardsRef = useRef();
   const projectsRef = useRef();
+
+  // Initialize EmailJS
+  useEffect(() => {
+    initEmailJS();
+  }, []);
 
   // Initialize Lenis smooth scrolling
   useEffect(() => {
@@ -133,27 +139,33 @@ const Home = () => {
     setSubmitMessage('');
     
     try {
-      // Create FormData for Netlify Forms
-      const formDataToSend = new FormData();
-      formDataToSend.append('form-name', 'contact');
-      formDataToSend.append('name', formData.name);
-      formDataToSend.append('email', formData.email);
-      formDataToSend.append('message', formData.message);
-
-      const response = await fetch('/', {
-        method: 'POST',
-        body: formDataToSend,
-      });
-      
-      if (response.ok) {
-        setSubmitMessage('Thank you for your message! I\'ll get back to you soon.');
-        setFormData({ name: '', email: '', message: '' });
-      } else {
-        setSubmitMessage('Something went wrong. Please try again.');
+      // Validate form data
+      if (!formData.name.trim() || !formData.email.trim() || !formData.message.trim()) {
+        setSubmitMessage('Please fill in all fields.');
+        setIsSubmitting(false);
+        return;
       }
+
+      // Validate email format
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!emailRegex.test(formData.email)) {
+        setSubmitMessage('Please enter a valid email address.');
+        setIsSubmitting(false);
+        return;
+      }
+
+      // Send email using EmailJS
+      await sendEmail(formData);
+      
+      setSubmitMessage('Message sent successfully! I\'ll get back to you soon.');
+      setFormData({ name: '', email: '', message: '' });
     } catch (error) {
-      console.error('Network error:', error);
-      setSubmitMessage('Network error. Please try again later.');
+      console.error('Email sending failed:', error);
+      if (error.message.includes('EmailJS configuration')) {
+        setSubmitMessage('Email service is not configured. Please contact me directly at ahnafabid600@gmail.com');
+      } else {
+        setSubmitMessage('Failed to send message. Please try again or contact me directly.');
+      }
     }
     
     setIsSubmitting(false);
@@ -231,7 +243,7 @@ const Home = () => {
     try {
       // Direct download from public folder
       const link = document.createElement('a');
-      link.href = '/resume.pdf';
+      link.href = '/Ahnaf Abid Resume.pdf';
       link.download = 'Ahnaf_Abid_Resume.pdf';
       link.target = '_blank';
       document.body.appendChild(link);
@@ -240,8 +252,13 @@ const Home = () => {
     } catch (error) {
       console.error('Download failed:', error);
       // Fallback - open in new tab
-      window.open('/resume.pdf', '_blank');
+      window.open('/Ahnaf Abid Resume.pdf', '_blank');
     }
+  };
+
+  const handleViewResume = () => {
+    // Open Google Drive link in new tab
+    window.open('https://drive.google.com/file/d/1gzw0K7UWR0INGIY9CXa8KZoyHQ7qst1i/view?usp=sharing', '_blank');
   };
 
   const handleProjectClick = (project) => {
@@ -316,8 +333,17 @@ const Home = () => {
                 <span>Download Resume</span>
               </motion.button>
               <motion.button 
+                onClick={handleViewResume}
+                className="flex items-center space-x-2 px-6 py-3 rounded-lg font-medium border border-white hover:bg-white hover:text-black transition-all"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                <span className="material-icons text-sm">visibility</span>
+                <span>View Resume</span>
+              </motion.button>
+              <motion.button 
                 onClick={() => document.getElementById('projects').scrollIntoView({ behavior: 'smooth' })}
-                className="px-6 py-3 rounded-lg font-medium border border-white hover:bg-white hover:text-black transition-all"
+                className="px-6 py-3 rounded-lg font-medium border border-gray-400 text-gray-300 hover:border-white hover:text-white transition-all"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
@@ -762,18 +788,7 @@ const Home = () => {
               <form 
                 onSubmit={handleSubmit} 
                 className="space-y-4"
-                name="contact"
-                method="POST"
-                data-netlify="true"
-                data-netlify-honeypot="bot-field"
               >
-                {/* Hidden field for Netlify Forms */}
-                <input type="hidden" name="form-name" value="contact" />
-                
-                {/* Honeypot field for spam protection */}
-                <div style={{ display: 'none' }}>
-                  <input name="bot-field" />
-                </div>
                 <motion.div whileFocus={{ scale: 1.02 }}>
                   <input
                     type="text"
@@ -810,11 +825,21 @@ const Home = () => {
                 <motion.button
                   type="submit"
                   disabled={isSubmitting}
-                  className="w-full bg-white text-black hover:bg-gray-200 py-3 px-4 rounded-lg font-medium transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+                  className="w-full bg-white text-black hover:bg-gray-200 py-3 px-4 rounded-lg font-medium transition-colors disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
                 >
-                  {isSubmitting ? 'Sending...' : 'Send Message'}
+                  {isSubmitting ? (
+                    <>
+                      <div className="w-4 h-4 border-2 border-gray-600 border-t-transparent rounded-full animate-spin"></div>
+                      <span>Sending...</span>
+                    </>
+                  ) : (
+                    <>
+                      <span className="material-icons text-sm">send</span>
+                      <span>Send Message</span>
+                    </>
+                  )}
                 </motion.button>
               </form>
 
