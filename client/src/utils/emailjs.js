@@ -21,6 +21,11 @@ export const sendEmail = async (formData) => {
       throw new Error('EmailJS configuration is missing. Please check your environment variables.');
     }
 
+    // Validate formData
+    if (!formData || !formData.name || !formData.email || !formData.message) {
+      throw new Error('Form data is incomplete.');
+    }
+
     const templateParams = {
       from_name: formData.name,
       from_email: formData.email,

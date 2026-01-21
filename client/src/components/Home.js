@@ -161,7 +161,8 @@ const Home = () => {
       setFormData({ name: '', email: '', message: '' });
     } catch (error) {
       console.error('Email sending failed:', error);
-      if (error.message.includes('EmailJS configuration')) {
+      const errorMessage = error?.message || 'Unknown error occurred';
+      if (errorMessage.includes('EmailJS configuration')) {
         setSubmitMessage('Email service is not configured. Please contact me directly at ahnafabid600@gmail.com');
       } else {
         setSubmitMessage('Failed to send message. Please try again or contact me directly.');
@@ -402,24 +403,6 @@ const Home = () => {
                     <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
                   </svg>
                 </motion.a>
-              </div>
-            </div>
-
-            {/* Contact Info in Hero */}
-            <div className="border-t border-gray-800 pt-6">
-              <div className="flex flex-col sm:flex-row gap-4">
-                <div className="flex items-center gap-2">
-                  <span className="material-icons text-white">mail</span>
-                  <a href="mailto:ahnafabid600@gmail.com" className="text-gray-300 hover:text-white transition-colors">
-                    ahnafabid600@gmail.com
-                  </a>
-                </div>
-                <div className="flex items-center gap-2">
-                  <span className="material-icons text-white">call</span>
-                  <a href="tel:+8801326585958" className="text-gray-300 hover:text-white transition-colors">
-                    +880 1326 585958
-                  </a>
-                </div>
               </div>
             </div>
           </motion.div>
@@ -846,7 +829,7 @@ const Home = () => {
               {submitMessage && (
                 <motion.div 
                   className={`p-4 rounded-lg border text-sm ${
-                    submitMessage.includes('Thank you') 
+                    submitMessage && submitMessage.includes('successfully') 
                       ? 'bg-green-900/20 border-green-700 text-green-400'
                       : 'bg-red-900/20 border-red-700 text-red-400'
                   }`}
